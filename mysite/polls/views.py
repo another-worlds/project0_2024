@@ -29,4 +29,6 @@ def details(request, post_id):
     return HttpResponse(template.render(args, request))
 
 def about(request):
-    return HttpResponse("Nothing to see here(yet)")
+    args = {}
+    template = loader.get_template("polls/about.html")
+    return HttpResponse(template.render(args, request))

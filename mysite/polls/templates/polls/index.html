@@ -1,21 +1,10 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <ul>
-        {% for post in posts %}
-            <li><h3>
-                {{ post.title }}
-            </h3></li>
-        {% endfor %}
-        </ul>
-        <script src="" async defer></script>
-    </body>
-</html>
+{% extends "polls/base.html" %}
+{% block title %}Post list{% endblock title %}
+{% block content %}
+{% for post in posts %}
+    <li><h3>
+        <img src="{{post.image}}" height=200 width=200>{{ post.score}} - {{ post.title }}
+        <hr>
+    </h3></li>
+{% endfor %}
+{% endblock content %}
