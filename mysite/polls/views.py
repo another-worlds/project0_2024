@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 from .models import Post, Comment
+from random import randint
 
 
 # Create your views here.
@@ -27,6 +28,16 @@ def details(request, post_id):
     
     # Render template
     return HttpResponse(template.render(args, request))
+
+def random_post(request):
+    
+    i = randint(1, Post.objects.count())
+    post = Post.objects.get(pk=i)
+    args = {"post" : post}
+    
+    template = loader.get_template('polls/details.html')
+    return HttpResponse(template.render(args, request))
+    
 
 def about(request):
     args = {}

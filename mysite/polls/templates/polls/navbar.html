@@ -1,5 +1,11 @@
 <nav>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="navdiv">
+        <a href={% url 'polls:index_url' %}>Posts</a>
+    </div>
+    <div class="navdiv">
+        <a href={% url 'polls:random_url' %}>Random Post</a>
+    </div>
+    <div class="navdiv">
+        <a href={% url 'polls:about_url' %}>About</a>
+    </div>
 </nav>
